@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "alsatian": "^3.2.1"
+  },
+  "scripts": {
+	"test": "alsatian \"./test/*.test.ts\""
+  }
+}
