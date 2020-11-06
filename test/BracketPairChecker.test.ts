@@ -1,4 +1,4 @@
-import { Expect, Test, TestCase } from "alsatian";
+import { Expect, Test } from "alsatian";
 import { BracketPairChecker } from "../src/BracketPairChecker";
 
 export class BracketPairCheckerTest {

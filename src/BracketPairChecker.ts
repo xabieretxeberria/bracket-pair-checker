@@ -3,15 +3,21 @@ import { Stack } from "./Stack";
 export class BracketPairChecker {
 	private inputString: string;
 	private stack: Stack<string>;
-	private validCharacters: string[] = ['(', ')', '[', ']', '{', '}']
 
-	constructor(inputStr: string) {
-		this.inputString = inputStr;
+	private oppositeCharacters = new Map([
+		[")", "("],
+		["]", "["],
+		["}", "{"],
+	]);
+
+	constructor(str: string) {
+		this.inputString = str;
 		this.stack = new Stack<string>();
 	}
 
 	public CheckBracketPairs(): boolean {
 		const chars = [...this.inputString];
+		let returnValue = true;
 
 		chars.forEach(c => {
 			if (this.isOpenCharacter(c)) {
@@ -19,12 +25,15 @@ export class BracketPairChecker {
 			}
 
 			if (this.isCloseCharacter(c)) {
-				const poppedChar = this.stack.pop();
-				if (poppedChar != c) return false;
+				let poppedChar = this.stack.pop();
+				if (this.oppositeCharacters.get(c) != poppedChar) {
+					returnValue = false;
+					return;
+				}
 			}
 		});
 
-		return this.stack.isEmpty();
+		return returnValue;
 	}
 
 	private isOpenCharacter(char: string) {
