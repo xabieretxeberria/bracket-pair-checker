@@ -1,10 +1,13 @@
-class BracketPairChecker {
+import { Stack } from "./Stack";
+
+export class BracketPairChecker {
 	private inputString: string;
 	private stack: Stack<string>;
 	private validCharacters: string[] = ['(', ')', '[', ']', '{', '}']
 
 	constructor(inputStr: string) {
 		this.inputString = inputStr;
+		this.stack = new Stack<string>();
 	}
 
 	public CheckBracketPairs(): boolean {
@@ -21,7 +24,7 @@ class BracketPairChecker {
 			}
 		});
 
-		return true;
+		return this.stack.isEmpty();
 	}
 
 	private isOpenCharacter(char: string) {
