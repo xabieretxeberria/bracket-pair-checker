@@ -12,7 +12,7 @@ The exercise statement goes at follows:
 >
 >Input: `[()]{}{[()()]()}` &rarr; :heavy_check_mark:
 >
->Input: `[(])` -> :x:
+>Input: `[(])` &rarr; :x:
 
 ## Approach
 
