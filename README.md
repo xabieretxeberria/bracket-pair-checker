@@ -29,6 +29,8 @@ The `CheckBracketPairs` method processes the input string character by character
 
 ### Testing
 
-I used [Alsatian](https://github.com/alsatian-test/alsatian) to test my code. The tested cases the ones showed in the statement.
+I used [Alsatian](https://github.com/alsatian-test/alsatian) to test my code. To execute the tests:
 
-There are still some cases to be tested; for example, when the string starts with a closing character.
+```bash
+npm test
+```
